@@ -24,46 +24,46 @@ class Controller:
                 for item in selected_list:
                     item = int(item)
                     if item == 1:
-                        name_list.append("User Placements")
+                        name_list.append("Placements")
                         info_list.append(query_user_placement(username))
                     if item == 2:
-                        name_list.append("User Average Placement")
+                        name_list.append("Average Placement")
                         info_list.append([query_avg_user_placement(username)])
                     if item == 3:
-                        name_list.append("User Gold Left")
+                        name_list.append("Gold Left")
                         info_list.append(query_user_gold(username))
                     if item == 4:
-                        name_list.append("User Average Gold Left")
+                        name_list.append("Average Gold Left")
                         info_list.append([query_user_avg_gold(username)])
                     if item == 5:
-                        name_list.append("User Level")
+                        name_list.append("Level")
                         info_list.append(query_user_level(username))
                     if item == 6:
-                        name_list.append("User Average Level")
+                        name_list.append("Average Level")
                         info_list.append([query_user_avg_level(username)])
                     if item == 7:
-                        name_list.append("User Time Eliminated")
+                        name_list.append("Time Eliminated")
                         info_list.append(query_user_time_eliminated(username))
                     if item == 8:
-                        name_list.append("User Average Time Eliminated")
+                        name_list.append("Average Time Eliminated")
                         info_list.append([query_user_avg_time_eliminated(username)])
                     if item == 9:
-                        name_list.append("User Players Eliminated")
+                        name_list.append("Players Eliminated")
                         info_list.append(query_eliminated_user(username))
                     if item == 10:
-                        name_list.append("User Average Players Eliminated")
+                        name_list.append("Average Players Eliminated")
                         info_list.append([query_avg_eliminated_user(username)])
                     if item == 11:
-                        name_list.append("User Total Damage to Players")
+                        name_list.append("Total Damage to Players")
                         info_list.append(query_user_total_damage(username))
                     if item == 12:
-                        name_list.append("User Average Total Damage to Players")
+                        name_list.append("Average Total Damage to Players")
                         info_list.append([query_user_avg_total_damage(username)])
                     if item == 13:
-                        name_list.append("User Last Round ")
+                        name_list.append("Last Round ")
                         info_list.append(query_user_last_round(username))
                     if item == 14:
-                        name_list.append("User Average Last Round")
+                        name_list.append("Average Last Round")
                         info_list.append([query_user_avg_last_round(username)])
 
                 aux_continue = 0
