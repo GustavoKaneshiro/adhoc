@@ -129,3 +129,53 @@ class Viewer():
                     new_up.append(str(i))
 
                 window.find_element('upper').Update(values=new_up)
+
+    def showInfo(self, name_list, info_list, limit_username):
+        sg.theme('Reddit')
+        max = 0
+
+        for i in range(0, len(info_list)):
+            for j in range(0, len(info_list[i])):
+                if j > max:
+                    max = j
+
+        print(max)
+
+        table_list = []
+
+
+        for col in range(0, max + 1):
+            row_list = []
+            for row in range(0, len(info_list)):
+                if len(info_list[row]) <= col:
+                    row_list.append(info_list[row][0])
+                else:
+                    row_list.append(info_list[row][col])
+
+            table_list.append(row_list)
+
+        layout = [
+            [sg.Table(values=table_list, headings=name_list)],
+            [sg.Button('Ok'), sg.Button('Quit')],
+        ]
+
+        menu_text = ""
+
+        if limit_username[0] == limit_username[1]:
+            menu_text = str(limit_username[0]) + " Info"
+        else:
+            menu_text = str(limit_username[0]) + ' - ' + str(limit_username[1]) + ' Info'
+
+        window = sg.Window(menu_text, layout)
+
+        while 1:
+            event, values = window.read()
+
+            if event == sg.WINDOW_CLOSED or event == 'Quit':
+                window.close()
+                return -1
+            if event == "Continue":
+                window.close()
+                return 1
+
+

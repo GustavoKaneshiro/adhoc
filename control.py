@@ -66,15 +66,12 @@ class Controller:
                         name_list.append("User Average Last Round")
                         info_list.append([query_user_avg_last_round(username)])
 
-                print("")
-                i = 0
-                for item in name_list:
-                    print(item, " - ", username)
-                    for info in info_list[i]:
-                        print(info)
-                    print("")
-                    i += 1
+                aux_continue = 0
+                if name_list:
+                    aux_continue = self.view.showInfo(name_list, info_list, [username, username])
 
+                if aux_continue == -1:
+                    exit()
             if option == 2:
 
                 selected_list = self.view.avgMenu()
@@ -104,14 +101,12 @@ class Controller:
                         name_list.append("Average Last Round")
                         info_list.append([query_avg_last_round(limits[0], limits[1])])
 
-                i = 0
-                print("")
-                for name in name_list:
-                    print(name, " : ", limits[0], "-", limits[1])
-                    for info in info_list[i]:
-                        print(info)
-                    print("")
-                    i += 1
+                aux_continue = 0
+                if name_list:
+                    aux_continue = self.view.showInfo(name_list, info_list, limits)
+
+                if aux_continue == -1:
+                    exit()
 
             option = self.view.inicio()
 
