@@ -4,21 +4,25 @@ from matplotlib import pyplot
 import numpy
 
 
+
 class Controller:
     def __init__(self):
         self.view = Viewer()
 
     def inicio(self):
         option = self.view.inicio()
+
         while option != 3:
             if option == 1:
-                username = self.view.getUsername()
-                selected_list = self.view.userMenu()
 
+                selected_list = self.view.userMenu()
+                username = selected_list[0]
+                selected_list.remove(username)
                 name_list = []
                 info_list = []
 
                 for item in selected_list:
+                    item = int(item)
                     if item == 1:
                         name_list.append("User Placements")
                         info_list.append(query_user_placement(username))
@@ -70,16 +74,17 @@ class Controller:
                         print(info)
                     print("")
                     i += 1
-                    
 
             if option == 2:
-                limits = self.view.getLimits()
-                selected_list = self.view.avgMenu()
 
+                selected_list = self.view.avgMenu()
+                limits = selected_list[0]
+                selected_list.remove(limits)
                 name_list = []
                 info_list = []
 
                 for item in selected_list:
+                    item = int(item) - 8
                     if item == 1:
                         name_list.append("Average Gold")
                         info_list.append([query_avg_gold(limits[0], limits[1])])
@@ -111,4 +116,3 @@ class Controller:
             option = self.view.inicio()
 
 
-    def Response():
