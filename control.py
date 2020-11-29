@@ -70,6 +70,7 @@ class Controller:
                         print(info)
                     print("")
                     i += 1
+                    
 
             if option == 2:
                 limits = self.view.getLimits()
@@ -108,3 +109,6 @@ class Controller:
                     i += 1
 
             option = self.view.inicio()
+
+
+    def Response():

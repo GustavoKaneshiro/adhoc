@@ -7,7 +7,7 @@ from contextlib import contextmanager
 class DAOCrud:
 
     def getSession(self):
-        engine = create_engine("postgres+psycopg2://postgres:admin@localhost:5433/tft_bd2")
+        engine = create_engine("postgres+psycopg2://postgres:root@localhost:5432/tft_bd2")
         Session = sessionmaker(bind=engine)
         session = Session()
         return session
