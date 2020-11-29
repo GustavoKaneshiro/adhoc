@@ -158,7 +158,7 @@ class Viewer():
 
         layout = [
             [sg.Table(values=table_list, headings=name_list)],
-            [sg.Button('Ok'), sg.Button('Quit')],
+            [sg.Button('Continue'), sg.Button('Quit')],
         ]
         if max > 1:
             layout.append([sg.Button("Graph")])
