@@ -1,7 +1,6 @@
 from view import Viewer
 from queries import *
-from matplotlib import pyplot
-import numpy
+
 
 
 

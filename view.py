@@ -1,4 +1,6 @@
 import PySimpleGUI as sg
+from matplotlib import pyplot as plt
+import numpy
 
 class Viewer():
 
@@ -158,6 +160,8 @@ class Viewer():
             [sg.Table(values=table_list, headings=name_list)],
             [sg.Button('Ok'), sg.Button('Quit')],
         ]
+        if max > 1:
+            layout.append([sg.Button("Graph")])
 
         menu_text = ""
 
@@ -177,5 +181,18 @@ class Viewer():
             if event == "Continue":
                 window.close()
                 return 1
+            if event == "Graph":
+                i = 0
+                fig, ax = plt.subplots()
+                for row in info_list:
+                    row_list = []
+
+                    if len(row) > 1:
+                        for item in row:
+                            row_list.append(item)
+                        ax.plot(range(0, len(row_list)), row_list, label=name_list[i])
+                    i += 1
+                ax.legend()
+                plt.show()
 
 
